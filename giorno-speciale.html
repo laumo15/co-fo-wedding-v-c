@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8aaf93a4a9.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <title>Dettagli</title>
+    <link rel="shortcut icon" type="image/png" href="/images/logo-small.png"/>
+    <meta name="description" content="Dettagli">
+</head>
+<body class="giorno-speciale">
+    <div class="container">
+        <nav class="d-flex justify-content-between">
+            <a href="/" title="Homepage">
+                <img src="images/logo.png" class="logo d-none d-md-block" alt="Co&Fo logo"/>
+                <img src="images/logo-small.png" class="logo d-block d-md-none" alt="logo small"/>
+            </a>
+            <ul>
+                <li><a href="/index.html" title="Homepage">Home</a></li>
+                <li class="active"><a href="/" title="RSVP">Un giorno speciale</a></li>
+                <li><a href="/rsvp.html" title="RSVP">RSVP</a></li>
+                <li><a href="/e-poi.html" title="... e poi?">.... e poi?</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="d-flex">
+        <div class="row">
+            <div class="col-5 bordered">
+                <div class="giorno-text">
+                    <h1 class="giorno-headings">7 settembre 2024</h1>
+                    <h3 class="giorno-headings mb-5">Villa Toscanini, Ripalta Guerina (CR)</h3>
+                    <p class="mb-4">
+                        Vi aspettiamo il <strong>7 settembre 2024 alle 16.30 </strong>per la cerimonia del nostro Sì nei giardini di Villa Toscanini, a Ripalta Guerina (CR).
+                    </p>
+                    <p class="mb-4">
+                        Dopo la cerimonia, continueremo a festeggiare in Villa anche per il ricevimento.
+                    </p>
+                    <p class="mb-4">
+                        E a seguire... si balla!
+                    </p>
+                </div>
+                <div class="d-flex giorno-buttons">
+                    <a class="giorno-button" href="#" onclick="openCalendarPopup()">Aggiungi in agenda →</a>
+                    <a class="giorno-button" href="https://maps.app.goo.gl/p9sWovKUyWrUBLYCA" target="_blank">Indicazioni →</a>
+                </div>
+            </div>
+            <div class="col-7 background-giorno bordered-top">
+                <img src="/img/Costanza_and_Lorenzo-176.jpg" class="giorno-speciale-small"/>
+            </div>
+        </div>
+    </div>W
+        <div id="calendar-popup" class="calendar-popup">
+            <div class="closer">
+                <svg class="closer" onclick="closeCalendarPopup()" height="1.5rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg">
+                        <title>Close icon</title>
+                        <path d="M4 20L20 4M4 4l16 16" stroke="#440500" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+                <h4>Aggiungi in agenda:</h4>
+                <add-to-calendar-button class="visibility-inherit"
+                            name="Costanza e Lorenzo"
+                            startDate="2024-09-07"
+                            startTime="16:30"
+                            endDate="2024-09-08"
+                            endTime="03:00"
+                            timeZone="Europe/Rome"
+                            location="Villa Toscanini, Via XXV Aprile 33, 26010 Ripalta Guerina (CR)"
+                            description="Ebbene sì, ci sposiamo davvero!"
+                            options="'Apple','Google','iCal','Outlook.com','Yahoo'"
+                            buttonsList
+                            hideTextLabelButton
+                            buttonStyle="round"
+                            lightMode="bodyScheme"
+                            >
+                </add-to-calendar-button>
+        </div>
+        <!-- <div class="row">
+            <div class="col-lg-6">
+                <div class="content">
+                    <h1>7 settembre 2024</h1>
+                    <h2 class="mb-5 mt-5">Villa Toscanini, Ripalta Guerina (CR)</h2>
+                    <p class="mb-4">
+                        Vi aspettiamo il <strong>7 settembre 2024 alle ore 16.30 </strong>per la cerimonia del nostro Sì nei giardini di Villa Toscanini, a Ripalta Guerina (CR).
+                    </p>
+                    <p class="mb-4">
+                        Dopo la cerimonia, continueremo a festeggiare in Villa anche per il ricevimento.
+                    </p>
+                    <p class="mb-4">
+                        E a seguire... si balla!
+                    </p>
+                    <div class="buttons mt-5">
+                        <a class="home-button" href="https://maps.app.goo.gl/p9sWovKUyWrUBLYCA" target="_blank">Indicazioni</a>
+                        <a class="home-button" href="#" onclick="openCalendarPopup()">Aggiungi in agenda</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="/img/toscanini-crop.png" class="img-fluid rounded portrait"/>
+            </div>
+        </div> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
+    <script>
+        let calendarPopup = document.getElementById("calendar-popup");
+        function openCalendarPopup() {
+            event.preventDefault();
+            calendarPopup.classList.add("open-popup");
+        }
+        function closeCalendarPopup() {
+            event.preventDefault();
+            calendarPopup.classList.remove("open-popup");
+        }
+    </script>
+</body>
+</html>

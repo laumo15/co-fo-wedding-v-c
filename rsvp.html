@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8aaf93a4a9.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <title>RSVP</title>
+    <link rel="shortcut icon" type="image/png" href="/images/logo-small.png"/>
+    <meta name="description" content="Form risposta">
+</head>
+<body>
+    <div class="container">
+        <nav class="d-flex justify-content-between">
+            <a href="/" title="Homepage">
+                <img src="images/logo.png" class="logo d-none d-md-block" alt="Co&Fo logo"/>
+                <img src="images/logo-small.png" class="logo d-block d-md-none" alt="logo small"/>
+            </a>
+            <ul>
+                <li><a href="/index.html" title="Homepage">Home</a></li>
+                <li><a href="/giorno-speciale.html" title="RSVP">Un giorno speciale</a></li>
+                <li class="active"><a href="/" title="RSVP">RSVP</a></li>
+                <li><a href="/e-poi.html" title="... e poi?">.... e poi?</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container d-flex mt-4">
+        <div class="row">
+            <div class="col-2">
+            <h1 class="rsvp-headings rotate">Vi aspettiamo!</h1>
+            </div>
+            <div class="col-5 mt-3">
+                <h3 class="rsvp-headings mb-5">È gradita gentile conferma<br>entro il 30 giugno 2024.</h2>
+                <form id="form">
+                    <input placeholder="Nome" class="mb-5">
+                    <input placeholder="Cognome">
+                    <select>
+                        <option value="" disabled selected>Menù</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Vegetariano">Vegetariano</option>
+                        <option value="Vegano">Vegano</option>
+                        <option value="Senza lattosio">Senza lattosio</option>
+                        <option value="Senza glutine">Senza glutine</option>
+                    </select>
+                    <br>
+                    <span class="rsvp-font mb-5">Per quanti ospiti stai confermando, oltre a te?</span>
+                    <select id="ospiti" class="ml mb-3">
+                        <option value="" disabled selected>Numero ospiti</option>
+                        <option value = "Nessuno">Nessuno</option>
+                        <option value = 1>1</option>
+                        <option value = 2>2</option>
+                        <option value = 3>3</option>
+                        <option value = 4>4</option>
+                        <option value = 5>5</option>
+                        <option value = 6>6</option>
+                    </select>
+                    <div id="guestlist"></div>
+                    <textarea rows="2" cols="58" placeholder="Altre note, allergie, messaggi per gli sposi?" class="mb-3"></textarea>
+                    <br>
+                    <input type="submit" value="Invia →" class="invia">
+                </form>
+            </div>
+            <div class="col-5">
+                <img src="/img/Costanza_and_Lorenzo-15.jpg" class="rsvp-img">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector("#ospiti").addEventListener("change", function(e){
+            let ospiti = e.target.value;
+            let guestlist = document.querySelector("#guestlist");
+            guestlist.innerHTML = "";
+            for (let i = 1; i <= ospiti; i++) {
+                guestlist.innerHTML = guestlist.innerHTML + `<input placeholder="Nome"></input>
+                        <input placeholder="Cognome"></input>
+                        <select>
+                            <option value="" disabled selected>Menù</option>
+                            <option value="Standard">Standard</option>
+                            <option value="Vegetariano">Vegetariano</option>
+                            <option value="Vegano">Vegano</option>
+                            <option value="Senza lattosio">Senza lattosio</option>
+                            <option value="Senza glutine">Senza glutine</option>
+                        </select> <br>`
+            }
+        })
+        let form = document.querySelector("#form");
+        form.addEventListener("submit"), function(e){
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
